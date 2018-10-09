@@ -1,6 +1,10 @@
 # Clone from the Fedora rawhide image
 FROM registry.fedoraproject.org/fedora:27
 
+LABEL "com.redhat.component"="freeipa" \
+      "name"="mbasti/freeipa" \
+      "version"="4.6"
+
 MAINTAINER FreeIPA Developers <freeipa-devel@lists.fedorahosted.org>
 
 RUN groupadd -g 288 kdcproxy ; useradd -u 288 -g 288 -c 'IPA KDC Proxy User' -d '/var/lib/kdcproxy' -s '/sbin/nologin' kdcproxy
